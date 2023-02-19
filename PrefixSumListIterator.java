@@ -30,19 +30,19 @@ public class PrefixSumListIterator implements java.util.Iterator<Integer> {
     * Overrides the hasNext() method
     * Checks to see if ther are any more elements in the list that we have
     * not yet added to the prefix sum
-	*
-	* @return True if there are more values, False if there are no more values
-	*/
+    *
+    * @return True if there are more values, False if there are no more values
+    */
     @Override
     public boolean hasNext() {
         return listIterator.hasNext();
     }
 
     /**
-	* Overrides the next() method
-	* Retrieves the next integer from the list and adds it to the running sum
-	* @return prefixSum     The running sum of the list of integers
-	*/
+    * Overrides the next() method
+    * Retrieves the next integer from the list and adds it to the running sum
+    * @return prefixSum     The running sum of the list of integers
+    */
     @Override
     public Integer next() {
         prefixSum += listIterator.next();   // Adds the value of the current 
@@ -63,7 +63,7 @@ public class PrefixSumListIterator implements java.util.Iterator<Integer> {
             System.exit(1);
         }
 
-	    // convert the command-line parameters to the numbers needed
+        // convert the command-line parameters to the numbers needed
         int n = 0;
         int range = 0;
         try {
@@ -75,7 +75,7 @@ public class PrefixSumListIterator implements java.util.Iterator<Integer> {
         System.exit(1);
         }
 
-	    // create and populate three list, LinkedList, Vector, and Stack
+        // create and populate three list, LinkedList, Vector, and Stack
         java.util.Random r = new java.util.Random();
         List<Integer> lList = new LinkedList<Integer>();
         List<Integer> vList = new Vector<Integer>();
