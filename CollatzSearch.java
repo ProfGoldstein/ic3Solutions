@@ -14,15 +14,15 @@ public class CollatzSearch {
 	*
 	* @param args[0] The number of Collatz sequences we want to examine
 	*/	
-    public static void main(String[] args) {
-        long nmax = 0;	//The number of Collatz sequences
+	public static void main(String[] args) {
+		long nmax = 0;	//The number of Collatz sequences
 		
 		// Initialze the five "max" variables we are looking for
-        long maxLength = 0;
-        long maxN = 0;
-        long maxValue = 0;
-        long maxValueN = 0;
-        long maxValuePos = 0;
+		long maxLength = 0;
+		long maxN = 0;
+		long maxValue = 0;
+		long maxValueN = 0;
+		long maxValuePos = 0;
 				
 		// Convert the command-line parameter to the number of sequences
 		// we want to examine
@@ -35,38 +35,38 @@ public class CollatzSearch {
 		}
 		
 		// Itterate over each of the Collatz sequences
-        for (long n = 1; n <= nmax; n++) {
-            CollatzGenerator generator = new CollatzGenerator(n);
-            long length = 0;
-            long value = 0;
-            long pos = 0;
+		for (long n = 1; n <= nmax; n++) {
+			CollatzGenerator generator = new CollatzGenerator(n);
+			long length = 0;
+			long value = 0;
+			long pos = 0;
 			
 			// Look for the largest value in this sequence
-            while (generator.hasNext()) {
-                long x = generator.next();
-                length++;
-                if (x > value) {
-                    value = x;
-                    pos = length;
-                }
-            }
+			while (generator.hasNext()) {
+				long x = generator.next();
+				length++;
+				if (x > value) {
+					value = x;
+					pos = length;
+				}
+			}
 			
 			// Check to see if this sequence is the longest so far
-            if (length > maxLength) {
-                maxLength = length ;
-                maxN = n;
-            }
+			if (length > maxLength) {
+				maxLength = length ;
+				maxN = n;
+			}
 			
 			// Check to see if this sequence's largest value is the biggest so far
-            if (value > maxValue) {
-                maxValue = value;
-                maxValueN = n;
-                maxValuePos = pos;
-            }
-        }
+			if (value > maxValue) {
+				maxValue = value;
+				maxValueN = n;
+				maxValuePos = pos;
+			}
+		}
 
 		// Print results
-        System.out.println("Longest sequence started at " + maxN + " has length " + maxLength);
-        System.out.println("Largest value " + maxValue + " at position " + maxValuePos + " in sequence beginning with " + maxValueN );
-    }
+		System.out.println("Longest sequence started at " + maxN + " has length " + maxLength);
+		System.out.println("Largest value " + maxValue + " at position " + maxValuePos + " in sequence beginning with " + maxValueN );
+	}
 }
